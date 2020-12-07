@@ -1,0 +1,396 @@
+/* fade in */
+.fixedPosts.visible,
+.stickyPosts.visible {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  opacity: 1;
+}
+
+.recentPosts.visible {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  opacity: 1;
+}
+
+/* header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+header div {
+  width: 85%;
+  margin: 0 auto;
+  position: relative;
+}
+
+header div h1 {
+  float: left;
+  padding: 41px 0;
+}
+
+header div h1 a {
+  width: 196px;
+  height: 16px;
+  background: url("/img/logo.png") no-repeat;
+  display: block;
+  background-size: auto 16px;
+}
+
+header div nav {
+  float: right;
+  margin-right: 65px;
+}
+
+header div nav ul li {
+  margin-right: 65px;
+  padding: 35px 0;
+  display: inline-block;
+}
+
+header div nav ul li a {
+  color: #333;
+}
+
+header div button {
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 34px;
+  background: transparent;
+  border: 0;
+}
+
+/* main */
+main .container {
+  width: 85%;
+  margin: 100px auto;
+}
+
+.mainSlide {
+  position: relative;
+  width: 100%;
+}
+
+.mainSlide ul li {
+  position: relative;
+}
+
+.mainSlide ul li a figure img {
+  width: 100%;
+}
+
+.mainSlide ul li a .text {
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+  color: #fff;
+  font-weight: 900;
+}
+
+.mainSlide ul li a .text span {
+  display: block;
+}
+
+.mainSlide ul li a .text .artist {
+  font-size: 1.5em;
+}
+
+.mainSlide ul li a .text .title {
+  font-size: 3.5em;
+  margin-bottom: .5rem;
+}
+
+.mainSlide ul li a .black {
+  color: #222;
+}
+
+.fixedPosts {
+  width: 100%;
+  margin-top: 5rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
+}
+
+.fixedPosts .postList ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fixedPosts .postList ul li {
+  width: 33.3%;
+  margin-right: 2%;
+}
+
+.fixedPosts .postList ul li:nth-of-type(3) {
+  margin-right: 0;
+}
+
+.fixedPosts .postList ul li a figure {
+  width: 100%;
+}
+
+.fixedPosts .postList ul li a figure img {
+  width: 100%;
+}
+
+.fixedPosts .postList ul li a .category {
+  display: block;
+  font-size: 0.8em;
+  color: #666;
+}
+
+.fixedPosts .postList ul li a .title {
+  font-size: 1.2em;
+  color: #222;
+}
+
+.stickyPosts {
+  width: 100%;
+  margin-top: 5rem;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  opacity: 0;
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
+}
+
+.stickyPosts a {
+  display: table;
+}
+
+.stickyPosts a figure {
+  display: table-cell;
+  width: 65%;
+}
+
+.stickyPosts a figure img {
+  width: 100%;
+}
+
+.stickyPosts a .text {
+  display: table-cell;
+  width: 35%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.stickyPosts a .text span {
+  display: block;
+  margin: 0 auto;
+}
+
+.stickyPosts a .text .category {
+  color: #666;
+  font-size: 0.8em;
+}
+
+.stickyPosts a .text .category::after {
+  content: '';
+  display: block;
+  width: 5%;
+  height: 2px;
+  background-color: #dbdbdb;
+  margin: 2rem auto;
+}
+
+.stickyPosts a .text .title {
+  width: 90%;
+  font-size: 2.75em;
+  color: #222;
+  margin-bottom: 2rem;
+}
+
+.stickyPosts a .text .excerpt {
+  width: 70%;
+  color: #666;
+}
+
+.recentPosts {
+  width: 100%;
+  margin: 5rem auto;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  opacity: 0;
+  -webkit-transition: -webkit-transform 1s ease-in;
+  transition: -webkit-transform 1s ease-in;
+  transition: transform 1s ease-in;
+  transition: transform 1s ease-in, -webkit-transform 1s ease-in;
+}
+
+.recentPosts .postList {
+  width: 100%;
+}
+
+.recentPosts .postList ul {
+  display: inline-block;
+  width: 100%;
+  font-size: 0;
+}
+
+.recentPosts .postList ul li {
+  float: left;
+  width: 23.5%;
+  margin-bottom: 3rem;
+  margin-right: 2%;
+}
+
+.recentPosts .postList ul li:nth-of-type(4n) {
+  margin-right: 0%;
+}
+
+.recentPosts .postList ul li:nth-child(4n+1) {
+  clear: both;
+}
+
+.recentPosts .postList ul li a {
+  width: 100%;
+  display: block;
+}
+
+.recentPosts .postList ul li a figure {
+  width: 100%;
+}
+
+.recentPosts .postList ul li a figure img {
+  width: 100%;
+}
+
+.recentPosts .postList ul li a span {
+  display: block;
+  margin: 1rem 0;
+}
+
+.recentPosts .postList ul li a .category {
+  display: block;
+  font-size: 0.8em;
+  color: #666;
+}
+
+.recentPosts .postList ul li a .title {
+  font-size: 1.3em;
+  color: #222;
+  line-height: 1.5;
+  max-height: 3em;
+  overflow: hidden;
+}
+
+.recentPosts .postList ul li a .excerpt {
+  font-size: 0.9em;
+  overflow: hidden;
+  color: #666;
+  max-height: 3.428571428571428em;
+}
+
+.recentPosts .pagination {
+  text-align: center;
+}
+
+.recentPosts .pagination a {
+  display: block;
+  position: relative;
+  width: 200px;
+  padding: 1rem 3rem 1rem 2rem;
+  border: 1px solid #d6d6d6;
+  color: #666;
+  margin: 0 auto;
+}
+
+.recentPosts .pagination a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  -webkit-transform: translate(-15%, -50%);
+          transform: translate(-15%, -50%);
+  background: url("../img/ico_loadMore.png") no-repeat;
+  width: 18px;
+  height: 13px;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  border: 1px solid #d6d6d6;
+  padding: 5rem 0;
+}
+
+footer .socialChannel {
+  margin-bottom: 3rem;
+}
+
+footer .socialChannel ul li {
+  display: inline-block;
+  margin: 0 2rem;
+  vertical-align: middle;
+}
+
+footer .socialChannel ul li a {
+  display: block;
+  font-size: .8em;
+  color: #666;
+}
+
+footer .socialChannel ul li a::before {
+  content: '';
+  display: inline-block;
+  height: 16px;
+  margin-right: 10px;
+  background: url("../img/ico_package.png") no-repeat;
+  vertical-align: middle;
+}
+
+footer .socialChannel ul li .instagram::before {
+  width: 16px;
+  background-position: 0 -50px;
+}
+
+footer .socialChannel ul li .facebook::before {
+  width: 9px;
+  background-position: -50px -50px;
+}
+
+footer .socialChannel ul li .twitter::before {
+  width: 20px;
+  background-position: -100px -50px;
+}
+
+footer .socialChannel ul li .youtube::before {
+  width: 23px;
+  background-position: -150px -50px;
+}
+
+footer .socialChannel ul li .newsletter::before {
+  width: 18px;
+  background-position: 0 -100px;
+}
+
+footer address,
+footer p {
+  font-style: normal;
+  font-size: .8em;
+  line-height: 2;
+  color: #999;
+}
+/*# sourceMappingURL=index.css.map */

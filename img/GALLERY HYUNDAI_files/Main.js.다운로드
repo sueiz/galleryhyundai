@@ -1,0 +1,62 @@
+var Main = (function($) {
+	var options;
+
+	var init = function(_options) {
+		options = _options;
+
+		initVue();
+	};
+
+	var initVue = function() {
+		vue = new Vue({
+			el : '.vuelayer',
+			data : {
+				listVo : {},
+				resultList : [],
+				paginationInfo : {},
+			},
+			created : function() {
+				var vm = this;
+				vm.listVo = options.listVo;
+				vm.fetchData();
+			},
+			methods : {
+				fetchData : function() {
+					var vm = this;
+					$.ajax({ dataType : 'json', type : 'POST',
+						contentType : 'application/json',
+						url : '/main/data',
+						data : JSON.stringify(vm.listVo)
+					}).done(function(data) {
+						if (!vm.resultList) {
+							vm.resultList = [];
+						}
+						if (data.resultList && data.resultList.length > 0) {
+							data.resultList.forEach(function(item, index) {
+								vm.resultList.push(item);
+							});
+						}
+						vm.paginationInfo = data.paginationInfo;
+					});
+				},
+				onMore : function(page) {
+					var vm = this;
+					vm.listVo.pageIndex = vm.paginationInfo.currentPageNo + 1;
+					vm.fetchData();
+				},
+
+			},
+			updated : function() {
+				var vm = this;
+				if('function' == typeof vueUpdated) {
+					vueUpdated(vm);
+				}
+			},
+
+		});
+	};
+
+	return {
+		init : init
+	};
+}(jQuery));
